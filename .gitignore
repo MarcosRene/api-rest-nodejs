@@ -2,3 +2,4 @@ node_modules
 
 temp/app.db
 .env
+.env.test

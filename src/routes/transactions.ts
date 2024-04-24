@@ -22,9 +22,9 @@ export async function transactionsRoutes(app: FastifyInstance) {
       id: z.string().uuid(),
     })
 
-    const { sessionId } = request.cookies
-
     const { id } = getTransactionParamsSchema.parse(request.params)
+
+    const { sessionId } = request.cookies
 
     const transaction = await knex('transactions')
       .where({ session_id: sessionId, id })
